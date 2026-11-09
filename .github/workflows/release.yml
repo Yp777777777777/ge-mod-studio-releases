@@ -1,0 +1,30 @@
+name: Publish release
+
+# Whenever a new GEModStudio.apk lands on main, publish it on the Releases page
+# (tag v<VERSION>), so the latest download is always there.
+on:
+  push:
+    branches: [main]
+    paths: [GEModStudio.apk, VERSION]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create or update release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="$(tr -d '[:space:]' < VERSION)"
+          TAG="v${VERSION}"
+          NOTES="Download **GEModStudio.apk** below and open it on your phone to install (Android 10 or newer). You may need to allow installing apps from your browser or file manager."
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" GEModStudio.apk --clobber
+          else
+            gh release create "$TAG" GEModStudio.apk --title "GE Mod Studio ${TAG}" --notes "$NOTES" --latest
+          fi

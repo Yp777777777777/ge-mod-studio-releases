@@ -10,7 +10,8 @@ Build car and map mods for **Gran Emozione** on your phone, test them in the gam
 
 **[Download GEModStudio.apk](https://github.com/Yp777777777777/ge-mod-studio-releases/raw/main/GEModStudio.apk)** (latest version, about 24 MB)
 
-Release notes for each version are on the [Releases](https://github.com/Yp777777777777/ge-mod-studio-releases/releases) page.
+Version and release notes for every build are on the [Releases](https://github.com/Yp777777777777/ge-mod-studio-releases/releases) page.
+
 
 ## Install
 
