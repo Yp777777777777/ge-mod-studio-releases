@@ -15,6 +15,9 @@ Version and release notes for every build are on the [Releases](https://github.c
 
 ## Install
 
+> **Updating from version 1.0.152 or older?** This version is signed with a new key, so Android can't install it over the old app ("App not installed").
+> First open your projects in the old app and tap **Save** so they are in the game folder (or use **Account › Cloud backup**). Then uninstall the old app and install this one. Your mods in `Download/granemozione` stay where they are; open them again from **Home › Game folder**.
+
 1. Open the APK on your Android phone (Android 10 or newer).
 2. If Android asks, allow installing apps from your browser or file manager.
 3. Open **GE Mod Studio** and sign in with your Gran Emozione account to publish mods.
