@@ -5,7 +5,7 @@ name: Publish release
 on:
   push:
     branches: [main]
-    paths: [GEModStudio.apk, VERSION]
+    paths: [GEModStudio.apk, GEConverter.apk, VERSION]
   workflow_dispatch:
 
 permissions:
@@ -22,9 +22,11 @@ jobs:
         run: |
           VERSION="$(tr -d '[:space:]' < VERSION)"
           TAG="v${VERSION}"
-          NOTES="Download **GEModStudio.apk** below and open it on your phone to install (Android 10 or newer). You may need to allow installing apps from your browser or file manager."
+          NOTES="Download **GEModStudio.apk** below and open it on your phone to install (Android 10 or newer). GEConverter.apk converts cars and maps from other games. You may need to allow installing apps from your browser or file manager."
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" GEModStudio.apk --clobber
+            [ -f GEConverter.apk ] && gh release upload "$TAG" GEConverter.apk --clobber
           else
-            gh release create "$TAG" GEModStudio.apk --title "GE Mod Studio ${TAG}" --notes "$NOTES" --latest
+            FILES="GEModStudio.apk"; [ -f GEConverter.apk ] && FILES="$FILES GEConverter.apk"
+            gh release create "$TAG" $FILES --title "GE Mod Studio ${TAG}" --notes "$NOTES" --latest
           fi

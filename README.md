@@ -10,6 +10,8 @@ Build car and map mods for **Gran Emozione** on your phone, test them in the gam
 
 **[Download GEModStudio.apk](https://github.com/Yp777777777777/ge-mod-studio-releases/raw/main/GEModStudio.apk)** (latest version, about 24 MB)
 
+**[Download GEConverter.apk](https://github.com/Yp777777777777/ge-mod-studio-releases/raw/main/GEConverter.apk)** (GE Converter, about 2 MB): turns cars and maps from other games into Gran Emozione mods. It is also built into GE Mod Studio (Home › Convert from another game).
+
 Version and release notes for every build are on the [Releases](https://github.com/Yp777777777777/ge-mod-studio-releases/releases) page.
 
 
@@ -31,5 +33,6 @@ Version and release notes for every build are on the [Releases](https://github.c
 - Installs straight into the game's mod folder, or saves a zip
 - Publishes to granemozione.online and shows when moderators approve it
 - Opens community mods from the website as new projects
+- Convert cars and maps from other games: 3D model, textures, physics, lights and engine sounds, with damage parts and blurred wheels left out (GE Converter, also in the app)
 
 This repository only hosts the app downloads.
